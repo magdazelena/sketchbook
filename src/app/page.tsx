@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { prisma } from "../db";
 
 export default async function Home() {
