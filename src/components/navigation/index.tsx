@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Coming_Soon } from "next/font/google";
 
 type Navigation = {
   title: string;
@@ -9,12 +10,13 @@ type Category = {
   id: string;
 };
 
+const slackside = Coming_Soon({ subsets: ["latin"], weight: "400" });
 export default function Navigation({ title, categories }: Navigation) {
   return (
-    <div>
-      <p>{title}</p>
-      <nav>
-        <ul>
+    <div className="flex justify-between border-b-2 border-slate-950 p-10 ">
+      <h2 className={`w-1/5 text-2xl ${slackside.className}`}>{title}</h2>
+      <nav className="w-4/5">
+        <ul className="flex justify-evenly w-full">
           <li>
             <Link href="/">All projects</Link>
           </li>

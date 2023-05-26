@@ -1,9 +1,9 @@
 import { prisma } from "../db";
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import Navigation from "../components/navigation";
 
-const inter = Inter({ subsets: ["latin"] });
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Sketchbook",
@@ -18,7 +18,7 @@ export default async function RootLayout({
   const categories = await prisma.category.findMany();
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={montserrat.className}>
         <Navigation title={metadata.title} categories={categories} />
         {children}
       </body>
